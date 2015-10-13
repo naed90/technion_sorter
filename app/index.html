@@ -1,43 +1,721 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app.css">
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+	<title>Schedule builder for technion - Home</title>
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+
+	<link rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/sites.css?buildTime=1234" />
+	<link rel="stylesheet" type="text/css" href="http://cdn1.editmysite.com/editor/libraries/fancybox/fancybox.css?1234" />
+	<link rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/social-icons.css?buildtime=1234" media="screen,projection" />
+	<link rel="stylesheet" type="text/css" href="files/main_style.css?1444643734" title="wsite-theme-css" />
+	<link href='http://fonts.googleapis.com/css?family=Actor&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+	<link href='http://fonts.googleapis.com/css?family=Cabin:400,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,200,200italic,700,400italic,700italic&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+
+
+
+	<!--Accordion style-->
+	<style type="text/css">
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .paragraph {
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion {
+			padding: 20px 0;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple .accordion__item {
+			width: 100%;
+			display: block;
+			position: relative;
+			margin-bottom: 0;
+			background-color: #FFFFFF;
+			height: 100%;
+			box-sizing: border-box;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple .accordion__item .accordion__title {
+			width: 100%;
+			background-color: #E0E0E0;
+			padding: 10px 20px;
+			font-weight: bold !important;
+			text-transform: uppercase;
+			box-sizing: border-box;
+			font-size: 1.25rem;
+			transition: 250ms ease;
+			opacity: 0.75;
+			cursor: pointer;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple .accordion__item .accordion__title span {
+			opacity: 0.5;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple .accordion__item .accordion__title::after {
+			content: '+';
+			position: absolute;
+			float: right;
+			top: 10px;
+			right: 20px;
+			font-size: 1.25em;
+			opacity: 0.5;
+			color: #919191;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple .accordion__item .accordion__content {
+			display: none;
+			width: 100%;
+			box-sizing: border-box;
+			font-size: 1rem;
+			max-height: 0;
+			overflow: hidden;
+			transition: 500ms ease;
+			background-color: #FAFAFA;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple .accordion__item.active .accordion__title {
+			background-color: #FAFAFA;
+			opacity: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple .accordion__item.active .accordion__title span {
+			opacity: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple .accordion__item.active .accordion__title::after {
+			content: '\2013';
+			color: #9e9e9e;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple .accordion__item.active .accordion__content {
+			display: block;
+			max-height: 1000px;
+			transition: 500ms ease;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material .accordion__item {
+			width: 100%;
+			display: block;
+			position: relative;
+			margin-bottom: 0;
+			background-color: #FFFFFF;
+			height: 100%;
+			box-sizing: border-box;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material .accordion__item .accordion__title {
+			width: 100%;
+			background-color: #E0E0E0;
+			padding: 10px 20px;
+			font-weight: bold !important;
+			text-transform: uppercase;
+			box-sizing: border-box;
+			font-size: 1.25rem;
+			transition: 250ms ease;
+			opacity: 0.75;
+			cursor: pointer;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material .accordion__item .accordion__title span {
+			opacity: 0.5;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material .accordion__item .accordion__title::after {
+			content: '+';
+			position: absolute;
+			float: right;
+			top: 10px;
+			right: 20px;
+			font-size: 1.25em;
+			opacity: 0.5;
+			color: #919191;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material .accordion__item .accordion__content {
+			display: none;
+			width: 100%;
+			box-sizing: border-box;
+			font-size: 1rem;
+			max-height: 0;
+			overflow: hidden;
+			transition: 500ms ease;
+			background-color: #FAFAFA;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material .accordion__item.active .accordion__title {
+			background-color: #FAFAFA;
+			opacity: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material .accordion__item.active .accordion__title span {
+			opacity: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material .accordion__item.active .accordion__title::after {
+			content: '\2013';
+			color: #9e9e9e;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material .accordion__item.active .accordion__content {
+			display: block;
+			max-height: 1000px;
+			transition: 500ms ease;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material .accordion__item {
+			margin-bottom: 1px;
+			box-shadow: none;
+			transition: 500ms ease;
+			z-index: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material .accordion__item.active {
+			box-shadow: 0 0 20px rgba(0,0,0,0.15);
+			z-index: 3;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box .accordion__item {
+			width: 100%;
+			display: block;
+			position: relative;
+			margin-bottom: 0;
+			background-color: #FFFFFF;
+			height: 100%;
+			box-sizing: border-box;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box .accordion__item .accordion__title {
+			width: 100%;
+			background-color: #E0E0E0;
+			padding: 10px 20px;
+			font-weight: bold !important;
+			text-transform: uppercase;
+			box-sizing: border-box;
+			font-size: 1.25rem;
+			transition: 250ms ease;
+			opacity: 0.75;
+			cursor: pointer;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box .accordion__item .accordion__title span {
+			opacity: 0.5;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box .accordion__item .accordion__title::after {
+			content: '+';
+			position: absolute;
+			float: right;
+			top: 10px;
+			right: 20px;
+			font-size: 1.25em;
+			opacity: 0.5;
+			color: #919191;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box .accordion__item .accordion__content {
+			display: none;
+			width: 100%;
+			box-sizing: border-box;
+			font-size: 1rem;
+			max-height: 0;
+			overflow: hidden;
+			transition: 500ms ease;
+			background-color: #FAFAFA;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box .accordion__item.active .accordion__title {
+			background-color: #FAFAFA;
+			opacity: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box .accordion__item.active .accordion__title span {
+			opacity: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box .accordion__item.active .accordion__title::after {
+			content: '\2013';
+			color: #9e9e9e;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box .accordion__item.active .accordion__content {
+			display: block;
+			max-height: 1000px;
+			transition: 500ms ease;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box .accordion__item {
+			transition: 500ms ease;
+			border: 1px solid #919191;
+			z-index: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box .accordion__item.active {
+			z-index: 3;
+			border: 1px solid #9e9e9e;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple.no-touch .accordion__item {
+			width: 100%;
+			display: block;
+			position: relative;
+			margin-bottom: 0;
+			background-color: #FFFFFF;
+			height: 100%;
+			box-sizing: border-box;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple.no-touch .accordion__item .accordion__title {
+			width: 100%;
+			background-color: #E0E0E0;
+			padding: 10px 20px;
+			font-weight: bold !important;
+			text-transform: uppercase;
+			box-sizing: border-box;
+			font-size: 1.25rem;
+			transition: 250ms ease;
+			opacity: 0.75;
+			cursor: pointer;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple.no-touch .accordion__item .accordion__title span {
+			opacity: 0.5;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple.no-touch .accordion__item .accordion__title::after {
+			content: '+';
+			position: absolute;
+			float: right;
+			top: 10px;
+			right: 20px;
+			font-size: 1.25em;
+			opacity: 0.5;
+			color: #919191;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple.no-touch .accordion__item .accordion__content {
+			display: none;
+			width: 100%;
+			box-sizing: border-box;
+			font-size: 1rem;
+			max-height: 0;
+			overflow: hidden;
+			transition: 500ms ease;
+			background-color: #FAFAFA;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple.no-touch .accordion__item.active .accordion__title {
+			background-color: #FAFAFA;
+			opacity: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple.no-touch .accordion__item.active .accordion__title span {
+			opacity: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple.no-touch .accordion__item.active .accordion__title::after {
+			content: '\2013';
+			color: #9e9e9e;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple.no-touch .accordion__item.active .accordion__content {
+			display: block;
+			max-height: 1000px;
+			transition: 500ms ease;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple.no-touch .accordion__item .accordion__title:hover {
+			opacity: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--simple.no-touch .accordion__item .accordion__title:hover span {
+			opacity: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material.no-touch .accordion__item {
+			width: 100%;
+			display: block;
+			position: relative;
+			margin-bottom: 0;
+			background-color: #FFFFFF;
+			height: 100%;
+			box-sizing: border-box;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material.no-touch .accordion__item .accordion__title {
+			width: 100%;
+			background-color: #E0E0E0;
+			padding: 10px 20px;
+			font-weight: bold !important;
+			text-transform: uppercase;
+			box-sizing: border-box;
+			font-size: 1.25rem;
+			transition: 250ms ease;
+			opacity: 0.75;
+			cursor: pointer;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material.no-touch .accordion__item .accordion__title span {
+			opacity: 0.5;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material.no-touch .accordion__item .accordion__title::after {
+			content: '+';
+			position: absolute;
+			float: right;
+			top: 10px;
+			right: 20px;
+			font-size: 1.25em;
+			opacity: 0.5;
+			color: #919191;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material.no-touch .accordion__item .accordion__content {
+			display: none;
+			width: 100%;
+			box-sizing: border-box;
+			font-size: 1rem;
+			max-height: 0;
+			overflow: hidden;
+			transition: 500ms ease;
+			background-color: #FAFAFA;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material.no-touch .accordion__item.active .accordion__title {
+			background-color: #FAFAFA;
+			opacity: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material.no-touch .accordion__item.active .accordion__title span {
+			opacity: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material.no-touch .accordion__item.active .accordion__title::after {
+			content: '\2013';
+			color: #9e9e9e;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material.no-touch .accordion__item.active .accordion__content {
+			display: block;
+			max-height: 1000px;
+			transition: 500ms ease;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material.no-touch .accordion__item .accordion__title:hover {
+			opacity: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material.no-touch .accordion__item .accordion__title:hover span {
+			opacity: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material.no-touch .accordion__item {
+			margin-bottom: 1px;
+			box-shadow: none;
+			transition: 500ms ease;
+			z-index: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material.no-touch .accordion__item.active {
+			box-shadow: 0 0 20px rgba(0,0,0,0.15);
+			z-index: 3;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--material.no-touch .accordion__item:hover {
+			box-shadow: ;
+			z-index: 3;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box.no-touch .accordion__item {
+			width: 100%;
+			display: block;
+			position: relative;
+			margin-bottom: 0;
+			background-color: #FFFFFF;
+			height: 100%;
+			box-sizing: border-box;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box.no-touch .accordion__item .accordion__title {
+			width: 100%;
+			background-color: #E0E0E0;
+			padding: 10px 20px;
+			font-weight: bold !important;
+			text-transform: uppercase;
+			box-sizing: border-box;
+			font-size: 1.25rem;
+			transition: 250ms ease;
+			opacity: 0.75;
+			cursor: pointer;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box.no-touch .accordion__item .accordion__title span {
+			opacity: 0.5;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box.no-touch .accordion__item .accordion__title::after {
+			content: '+';
+			position: absolute;
+			float: right;
+			top: 10px;
+			right: 20px;
+			font-size: 1.25em;
+			opacity: 0.5;
+			color: #919191;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box.no-touch .accordion__item .accordion__content {
+			display: none;
+			width: 100%;
+			box-sizing: border-box;
+			font-size: 1rem;
+			max-height: 0;
+			overflow: hidden;
+			transition: 500ms ease;
+			background-color: #FAFAFA;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box.no-touch .accordion__item.active .accordion__title {
+			background-color: #FAFAFA;
+			opacity: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box.no-touch .accordion__item.active .accordion__title span {
+			opacity: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box.no-touch .accordion__item.active .accordion__title::after {
+			content: '\2013';
+			color: #9e9e9e;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box.no-touch .accordion__item.active .accordion__content {
+			display: block;
+			max-height: 1000px;
+			transition: 500ms ease;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box.no-touch .accordion__item .accordion__title:hover {
+			opacity: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box.no-touch .accordion__item .accordion__title:hover span {
+			opacity: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box.no-touch .accordion__item {
+			transition: 500ms ease;
+			border: 1px solid #919191;
+			z-index: 1;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box.no-touch .accordion__item.active {
+			z-index: 3;
+			border: 1px solid #9e9e9e;
+		}
+		#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6 .accordion--box.no-touch .accordion__item:hover {
+			z-index: 3;
+		}
+
+	</style>
+
+	<style type='text/css'>
+		.wsite-elements.wsite-not-footer div.paragraph, .wsite-elements.wsite-not-footer p, .wsite-elements.wsite-not-footer .product-block .product-title, .wsite-elements.wsite-not-footer .product-description, .wsite-elements.wsite-not-footer .wsite-form-field label, .wsite-elements.wsite-not-footer .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+		#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+		.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{}
+		.wsite-elements.wsite-not-footer h2, .wsite-elements.wsite-not-footer .product-long .product-title, .wsite-elements.wsite-not-footer .product-large .product-title, .wsite-elements.wsite-not-footer .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+		#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+		.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{}
+		#wsite-title {}
+		.wsite-menu-default a {}
+		.wsite-menu a {}
+		.wsite-image div, .wsite-caption {}
+		.galleryCaptionInnerText {}
+		.fancybox-title {}
+		.wslide-caption-text {}
+		.wsite-phone {}
+		.wsite-headline {}
+		.wsite-headline-paragraph {}
+		.wsite-button-inner {}
+		.wsite-not-footer blockquote {}
+		.wsite-footer blockquote {}
+		.blog-header h2 a {}
+		#wsite-content h2.wsite-product-title {}
+		.wsite-product .wsite-product-price a {}
+	</style>
+
+	<script><!--
+	var STATIC_BASE = '//cdn1.editmysite.com/';
+	var STYLE_PREFIX = 'wsite';
+	//-->
+	</script>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+
+	<script src="http://cdn2.editmysite.com/js/site/main.js?buildTime=1234"></script><script type="text/javascript">_W.configDomain = "www.weebly.com";</script><script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/ftl.js?buildTime=1234"></script><script>_W.relinquish && _W.relinquish()</script>
+	<script type="text/javascript"><!--
+	var IS_ARCHIVE = 1;
+
+	(function(jQuery){
+		function initFlyouts(){
+			initPublishedFlyoutMenus(
+					[{"id":"413666859955297473","title":"Home","url":"index.html","target":""},{"id":"113435442134780901","title":"About","url":"about.html","target":""},{"id":"758584789414985369","title":"Contact","url":"contact.html","target":""}],
+					"413666859955297473",
+					'',
+					'active',
+					false,
+					{"navigation\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-item-wrap\"\n\t>\n\t<a href=\"{{url}}\"\n\t\t{{#target}}target=\"{{target}}\"{{\/target}}\n\t\tclass=\"wsite-menu-item\"\n\t\t{{#membership_required}}\n\t\t\tdata-membership-required=\"{{.}}\"\n\t\t{{\/membership_required}}\n\t\t>\n\t\t{{{title_html}}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n","navigation\/flyout\/list":"<div class=\"wsite-menu-wrap\" style=\"display:none\">\n\t<ul class=\"wsite-menu\">\n\t\t{{#children}}{{> navigation\/flyout\/item}}{{\/children}}\n\t<\/ul>\n<\/div>\n","navigation\/flyout\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-subitem-wrap {{#is_current}}wsite-nav-current{{\/is_current}}\"\n\t>\n\t<a href=\"{{url}}\"\n\t\t{{#target}}target=\"{{target}}\"{{\/target}}\n\t\tclass=\"wsite-menu-subitem\"\n\t\t>\n\t\t<span class=\"wsite-menu-title\">\n\t\t\t{{{title_html}}}\n\t\t<\/span>{{#has_children}}<span class=\"wsite-menu-arrow\">&gt;<\/span>{{\/has_children}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n"},
+					{}
+			)
+		}
+		if (jQuery) {
+			jQuery(document).ready(function() { jQuery(initFlyouts); });
+		}else{
+			if (Prototype.Browser.IE) window.onload = initFlyouts;
+			else document.observe('dom:loaded', initFlyouts);
+		}
+	})(window._W && _W.jQuery)
+	//-->
+	</script>
+
 </head>
-<body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
 
-  <div ng-view></div>
+<body ng-app="myApp" class="landing-page  wsite-theme-light  wsite-page-index"><input type="checkbox" id="nav-trigger" class="nav-trigger">
+<div class="wrapper">
 
-  <div>Angular seed app: v<span app-version></span></div>
+	<div id="header">
+		<div class="container">
+			<div id="nav-handle">
+				<label for="nav-trigger" class="hamburger">
+					<span class="mobile"></span>
+				</label>
+				<div class="wsite-nav-cart-wrapper"></div>
+			</div>
+			<div id="logo"><span class="wsite-logo">
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+   <a href="">
+
+	   <span id="wsite-title">Schedule builder for technion</span>
+
+   </a>
+
+</span></div>
+			<div id="search"></div>
+		</div>
+	</div>
+
+	<div class="page-sidebar">
+		<div id="navhidden" class="nav"><ul class="wsite-menu-default">
+			<li id="active"
+				class="wsite-menu-item-wrap"
+					>
+				<a href="index.html"
+
+				   class="wsite-menu-item"
+						>
+					Home
+				</a>
+
+			</li>
+			<li id="pg113435442134780901"
+				class="wsite-menu-item-wrap"
+					>
+				<a href="about.html"
+
+				   class="wsite-menu-item"
+						>
+					About
+				</a>
+
+			</li>
+			<li id="pg758584789414985369"
+				class="wsite-menu-item-wrap"
+					>
+				<a href="contact.html"
+
+				   class="wsite-menu-item"
+						>
+					Contact
+				</a>
+
+			</li>
+		</ul>
+		</div>
+		<div id="nav" class="nav"><ul class="wsite-menu-default">
+			<li id="active"
+				class="wsite-menu-item-wrap"
+					>
+				<a href="index.html"
+
+				   class="wsite-menu-item"
+						>
+					Home
+				</a>
+
+			</li>
+			<li id="pg113435442134780901"
+				class="wsite-menu-item-wrap"
+					>
+				<a href="about.html"
+
+				   class="wsite-menu-item"
+						>
+					About
+				</a>
+
+			</li>
+			<li id="pg758584789414985369"
+				class="wsite-menu-item-wrap"
+					>
+				<a href="contact.html"
+
+				   class="wsite-menu-item"
+						>
+					Contact
+				</a>
+
+			</li>
+		</ul>
+		</div>
+	</div>
+
+	<div class="page-content">
+		<div id="banner-wrap" class="wsite-background">
+			<div class="container">
+				<div id="banner">
+					<h2></h2>
+					<p></p>
+					<div class="button-wrap"></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="main"><div class="container"><div id='wsite-content' class='wsite-elements wsite-not-footer'>
+			<div>
+				<form enctype="multipart/form-data" id="form-177208194683550388" ng-controller="View1Cntrl">
+					<div id="177208194683550388-form-parent" class="wsite-form-container" style="margin-top:10px;">
+						<ul class="formlist" id="177208194683550388-form-list">
+							<h2 class="wsite-content-title" style="text-align:left;">Input courses<br /></h2>
+							<!--<p>The number {{3 + 4}}.</p>-->
+							<div  ><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+								<table class="wsite-multicol-table">
+									<tbody class="wsite-multicol-tbody">
+									<tr ng-repeat="n in [] | range:number_of_courses" class="wsite-multicol-tr">
+
+
+
+
+										<td>
+												<view1 course_name="course_data[n].course_name"
+													   course_num="course_data[n].course_num"
+														check_av = "course_data[n].checkAv"
+													   n="n"
+														></view1>
+										</td>
+
+
+
+
+									</tr>
+									<tr>
+										<td  class="wsite-multicol-col" style="width:22.539682539683%; padding:0 35px;" ng-hide="number_of_courses==course_limit">
+											<button type="button" class="btn btn-default" ng-click="increment()">
+												<span class="glyphicon glyphicon-plus-sign"></span>
+											</button>
+										</td>
+									</tr>
+									</tbody>
+								</table>
+							</div></div></div>
+						</ul>
+					</div>
+					<div style="display:none; visibility:hidden;">
+						<input type="text" name="wsite_subject" />
+					</div>
+					<div style="text-align:left; margin-top:10px; margin-bottom:10px;">
+						<input type="hidden" name="form_version" value="2" />
+						<input type="hidden" name="wsite_approved" id="wsite-approved" value="approved" />
+						<input type="hidden" name="ucfid" value="177208194683550388" />
+						<input type='submit' style='position:absolute;top:0;left:-9999px;width:1px;height:1px' /><a class='wsite-button' ng-click="readInput()"><span class='wsite-button-inner'>Submit</span></a>
+					</div>
+				</form>
+
+				<!--Accordion-->
+
+				<view2 schedules = "[1,2,3,4,5]"></view2>
+
+			</div></div>
+		</div></div>
+
+
+		<div id="footer">Site by Dean Leitersdorf</div>
+	</div>
+</div>
+
+<!-- JavaScript -->
+<script type="text/javascript" src="files/theme/plugins.js"></script>
+<script type="text/javascript" src="files/theme/custom.js"></script>
+<script type="text/javascript" src="files/theme/mobile.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
+
+<script scr="view1/view1.js"></script>
+<script src="app.js"></script>
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-route.js"></script> -->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script src="scheduleFindingLogicClean.js"></script>
+
+
+
+
+
+
+
+
 </body>
 </html>

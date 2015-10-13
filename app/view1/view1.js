@@ -1,14 +1,30 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
-  });
-}])
+var app = angular.module('myApp');
 
-.controller('View1Ctrl', [function() {
 
-}]);
+app.controller('View1Cntrl', ["$scope",function($scope) {
+        $scope.greeting = { text: 'Hello' };
+    }])
+
+    .directive('view1', function() {
+      return {
+        restrict: 'E',
+        templateUrl: 'view1.html',
+        link: function(scope) {
+
+        }
+      };
+    })
+    .filter('range', function() {
+        return function(input, total) {
+            total = parseInt(total);
+
+            for (var i=0; i<total; i++) {
+                input.push(i);
+            }
+
+            return input;
+        };
+    });

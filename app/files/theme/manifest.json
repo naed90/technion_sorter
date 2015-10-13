@@ -1,0 +1,14 @@
+ {
+	"responsive": true,
+	"tmpSocialIconFont": true,
+	"enableEditorJS": true,
+	"description": "With a sporty, high impact vibe Superset is ready to carry your website into the future. Collapsable menus, bold typography and full width images give your site the  strength and cross-functional appeal you've always wanted.",
+	"features": [
+		"responsive",
+		"css-buttons",
+		"social-icons",
+		"full-width-header",
+		"navigation-collapsible",
+		"color-palettes"
+	]
+}

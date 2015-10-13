@@ -1,1 +1,48 @@
-<p>This is the partial for view 1.</p>
+
+
+<td  class="wsite-multicol-col" style="width:9.539682539683%; padding:0 15px;">
+
+
+<div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
+    <label class="wsite-form-label" for="input-659974570676222107">Course Name <span class="form-not-required">*</span></label>
+    <div class="wsite-form-input-container">
+        <input id="input-659974570676222107" class="wsite-form-input wsite-input wsite-input-width-285px" type="text" name="_u659974570676222107"  ng-model="course_data[n].course_name"  />
+    </div>
+    <div id="instructions-659974570676222107" class="wsite-form-instructions" style="display:none;">Can be anything you want.</div>
+</div></div>
+
+
+
+</td>				<td class="wsite-multicol-col" style="width:7.126984126984%; padding:0 15px;">
+
+
+
+    <div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
+        <label class="wsite-form-label" for="input-121044072807966801">Course Number <span class="form-not-required">*</span></label>
+        <div class="wsite-form-input-container">
+            <input type="text" limit-to="6" id="input-121044072807966801" class="wsite-form-input wsite-input wsite-input-width-285px" name="_u121044072807966801" ng-model="course_data[n].course_num" />
+        </div>
+        <div id="instructions-121044072807966801" class="wsite-form-instructions" style="display:none;">Ensure this is accurate! Will be used to pull course data from the Technion UG website.</div>
+    </div></div>
+
+
+
+</td>				<td class="wsite-multicol-col" style="width:20.333333333333%; padding:0 15px;">
+
+
+
+    <div><div class="wsite-form-field" style="margin:5px 0px 0px 0px;">
+        <label class="wsite-form-label" for="input-920297972276656690">Check Availability? <span class="form-not-required">*</span></label>
+        <div class="wsite-form-radio-container">
+            <span class='form-radio-container'><input type='checkbox' ng-model="course_data[n].checkAv" /><label ng-click="toggleN(n)"></label></span>
+
+        </div>
+
+    </div></div>
+</td>
+
+<!--
+<td>
+    <div class="wsite-form-instructions">If you choose to check for availability, you must provide sign in details for the Technion UG website.
+    </div>
+</td>-->

@@ -1,5 +1,218 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+
+<!--Accordion Script:-->
+<script type="text/javascript" class="element-script">function setupElement499608529329947357() {
+  var elementRequire = require || _wAMD.require;
+  elementRequire([
+    'jquery',
+    'underscore',
+    'backbone',
+    'util/platform/elements/PlatformElement',
+    'util/platform/elements/PlatformElementSettings'
+  ], function(
+          $,
+          _,
+          Backbone,
+          PlatformElement,
+          PlatformElementSettings
+  ) {
+    var dependencies = null || [];
+    var platform_element_id = "915890017822203553-1.3.0";
+
+    if (typeof _W.loadedPlatformDependencies === 'undefined') {
+      _W.loadedPlatformDependencies = [];
+    }
+
+    if (typeof _W.platformElements === 'undefined') {
+      _W.platformElements = [];
+    }
+
+    if (typeof _W.platformElements[platform_element_id] === 'undefined') {
+      _W.platformElements[platform_element_id] = {};
+      _W.platformElements[platform_element_id].deferredObject = new $.Deferred();
+      _W.platformElements[platform_element_id].deferredPromise = _W.platformElements[platform_element_id].deferredObject.promise();
+    }
+
+    if(_.intersection(_W.loadedPlatformDependencies, dependencies).length !== dependencies.length){
+      _.reduce(dependencies, function(promise, nextScript){
+        _W.loadedPlatformDependencies.push(nextScript);
+        return promise.then(function(){
+          return $.getScript(nextScript);
+        });
+      }, $().promise()).then(function(){
+        _W.platformElements[platform_element_id].deferredObject.resolve();
+      });
+    }
+
+    if (dependencies.length === 0){
+      _W.platformElements[platform_element_id].deferredObject.resolve();
+    }
+
+    _W.platformElements[platform_element_id].deferredPromise.done(function(){
+      var _Element = /**
+       * This is required for element rendering to be possible
+       * @type {PlatformElement}
+       */
+              (function() {
+                var Accordion = PlatformElement.extend({
+                  initialize: function() {
+                    this.activeIndex = this.settings.get('active_index');
+
+                    this.fixStyles();
+                    this.setupAccordion();
+                  },
+
+                  /**
+                   * Styles are applied by default to editable areas of
+                   * the editor. To make the element looks how you want, some styles
+                   * need to be overwritten.
+                   *
+                   * Classes that are used are:
+                   *      - .editable-text
+                   *      - .paragraph
+                   *      - .ui-wrapper
+                   *      - .wsite-image
+                   *      - .wsite-*
+                   *      - (etc...)
+                   */
+                  fixStyles: function() {
+                    this.$el.find('.editable-text').each(function(index) {
+                      $(this).attr('style', '');
+                    });
+
+                    this.$el.find('.element').each(function(index) {
+                      $(this).attr('style', '');
+                    });
+
+                    this.fixBoxStyleBorders();
+                  },
+
+                  /**
+                   * Simplistic jQuery usage to animate and control which
+                   * accordion item is currently open
+                   */
+                  setupAccordion: function() {
+                    var view = this;
+
+                    this.$el.find('.accordion__title').on('touchstart click', function(e) {
+                      // remove "hover" state on touch events
+                      if (e.type == "touchstart") {
+                        view.$el.find('.accordion').removeClass('no-touch');
+                      }
+
+                      e.stopPropagation();
+                      e.preventDefault();
+
+                      var isActive = $(this).parent().hasClass('active');
+
+                      // handles closing
+                      view.$el.find('.accordion__title').each(function() {
+                        var $this = $(this);
+                        var $next = $(this).next();
+                        var eachIsActive = $(this).parent().hasClass('active');
+
+                        $next.css({
+                          'max-height': 0 + 'px'
+                        });
+
+                        if (eachIsActive) {
+                          setTimeout(function() {
+                            $this.parent().removeClass('active');
+                          }, 250);
+                        }
+                      });
+
+                      // handles opening
+                      if (!isActive) {
+                        $(this).parent().addClass('active');
+                        var $next = $(this).next();
+                        $next.css({
+                          'max-height': $next[0].scrollHeight + 20 + 'px' // 20 to compensate for padding
+                        });
+                      }
+                    });
+
+                    this.$el.find('.accordion__title').on('touchend', function() {
+                      view.$el.find('.accordion').addClass('no-touch');
+                    });
+                  },
+
+                  /**
+                   * When using the 'Box' style, to avoid
+                   * thick borders on the top and bottom of
+                   * elements, we just shift all the elements up
+                   * 'i' pixels. Preferable over doing it through css
+                   * because all the items need all 4 borders on hover.
+                   */
+                  fixBoxStyleBorders: function() {
+                    var view = this;
+
+                    // only do it if the style is 'box'
+                    if (this.settings.get('style') == 'box') {
+                      this.$el.find('.accordion--box .accordion__item').each(function(i) {
+                        $(this).css({
+                          'top': -i
+                        });
+                      });
+                    }
+                  }
+                });
+
+                return Accordion;
+              })();;
+
+      if (typeof _Element == 'undefined' || typeof _Element == 'null') {
+        var _Element = PlatformElement.extend({});
+      }
+
+      _Element.prototype.settings = new PlatformElementSettings({"items_each":[{"items_index":0},{"items_index":1},{"items_index":2}],"items":3,"style":"simple","title_background":"#E0E0E0","content_background":"#FAFAFA","active_index":"0"});
+      _Element.prototype.settings.page_element_id = "499608529329947357";
+
+      _Element.prototype.element_id = "7b84ffb5-75aa-4aac-8af8-b70c5626dcb6";
+      _Element.prototype.user_id = "62932833";
+      _Element.prototype.site_id = "788635773569169887";
+      _Element.prototype.assets_path = "//marketplace.editmysite.com/elements/915890017822203553-1.3.0/assets/";
+
+      new _Element({
+        el: '#element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6'
+      });
+    });
+
+  });
+}
+
+if (typeof document.documentElement.appReady == 'undefined') {
+  document.documentElement.appReady = 0;
+}
+
+if (document.documentElement.appReady || (window.inEditor && window.inEditor())) {
+  setupElement499608529329947357();
+} else if (document.createEvent && document.addEventListener) {
+  document.addEventListener('appReady', setupElement499608529329947357, false);
+} else {
+  document.documentElement.attachEvent('onpropertychange', function(event){
+    if (event.propertyName == 'appReady') {
+      setupElement499608529329947357();
+    }
+  });
+}
+
+</script>
+
+
+<div id="element-7b84ffb5-75aa-4aac-8af8-b70c5626dcb6" class="platform-element-contents">
+  <div class="accordion accordion--simple no-touch">
+
+    <span ng-repeat="schedule in schedules">
+    <div class="accordion__item" data-item="$index">
+      <div class="accordion__title">
+			<span><div class="paragraph" style="text-align:left;">title {{$index}}</div><span>
+      </div>
+      <div class="accordion__content">
+        <div style="padding: 10px 20px 20px;">
+          {{$index}}
+        </div>
+      </div>
+    </div>
+      </span>
+  </div>
+</div>
